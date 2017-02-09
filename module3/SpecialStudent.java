@@ -3,11 +3,11 @@ package module3;
 /**
  * Created by sovra on 09.02.2017.
  */
-public class SpecialStudent extends CollegeStudent{
+public class SpecialStudent extends CollegeStudent {
     long secretKey;
     String email;
 
-    public void showSpecialStudent(){
+    public void showSpecialStudent() {
         System.out.println("------------SpecialStudent -----------");
         System.out.println("secretkey :" + getSecretKey());
         System.out.println("email" + getEmail());

@@ -9,9 +9,9 @@ public class CollegeStudent extends Student {
     int rating;
     long id;
 
-    public void showCollegeStudent(){
+    public void showCollegeStudent() {
         System.out.println("-----------CollegeStudent--------------");
-        System.out.println("collegename :" + getCollegeName() );
+        System.out.println("collegename :" + getCollegeName());
         System.out.println("rating :" + getRating());
         System.out.println("id :" + getId());
         System.out.println("Student");
@@ -28,7 +28,7 @@ public class CollegeStudent extends Student {
         super(lastName, coursesTaken);
     }
 
-    public CollegeStudent(String firstName, String lastName, int group,  String collegeName, int rating, long id) {
+    public CollegeStudent(String firstName, String lastName, int group, String collegeName, int rating, long id) {
         super(firstName, lastName, group);
         this.collegeName = collegeName;
         this.rating = rating;

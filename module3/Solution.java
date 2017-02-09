@@ -42,8 +42,8 @@ public class Solution {
         SpecialStudent specialStudent1 = new SpecialStudent("1", "2", 3, "4", 5, 6);
         SpecialStudent specialStudent2 = new SpecialStudent("11", "22", 33);
         SpecialStudent specialStudent3 = new SpecialStudent("111", "222", 333, "444", 555, 666, 999);
-specialStudent1.showCollegeStudent();
-specialStudent2.showCollegeStudent();
-specialStudent3.showCollegeStudent();
+        specialStudent1.showCollegeStudent();
+        specialStudent2.showCollegeStudent();
+        specialStudent3.showCollegeStudent();
     }
 }

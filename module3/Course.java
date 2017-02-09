@@ -11,10 +11,10 @@ public class Course {
     int hoursDuration;
     String teacherName;
 
-    public void showCourse(){
+    public void showCourse() {
 
         System.out.println("------------Course--------------------");
-        System.out.println("Date :" +  getStartDate().toString());
+        System.out.println("Date :" + getStartDate().toString());
         System.out.println("name :" + getName());
         System.out.println("hours :" + getHoursDuration());
         System.out.println("teacher :" + getTeacherName());
@@ -26,18 +26,17 @@ public class Course {
         this.name = name;
     }
 
-    public Course(int hoursDuration, String name,  String teacherName) {
+    public Course(int hoursDuration, String name, String teacherName) {
         this.name = name;
         this.hoursDuration = hoursDuration;
         this.teacherName = teacherName;
     }
 
     private Date getStartDate() {
-        if (startDate==null) {
+        if (startDate == null) {
             Date dd = new Date();
             return dd;
-        }
-        else return startDate;
+        } else return startDate;
     }
 
     private String getName() {

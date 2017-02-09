@@ -3,21 +3,21 @@ package module3;
 /**
  * Created by sovra on 08.02.2017.
  */
-public class Student  {
+public class Student {
     String firstName;
     String lastName;
     int group;
     Course[] coursesTaken;
     int age;
 
-    public void showStudent(){
+    public void showStudent() {
         System.out.println("------------Student----------------");
         System.out.println("first name : " + getFirstName());
         System.out.println("last name :" + getLastName());
-        System.out.println("group :" +   getGroup() );
+        System.out.println("group :" + getGroup());
         System.out.println("age :" + getAge());
 
-        for (Course co: coursesTaken   ) {
+        for (Course co : coursesTaken) {
             co.showCourse();
         }
         System.out.println("-----------------------------------");
