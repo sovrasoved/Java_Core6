@@ -9,15 +9,15 @@ public class CollegeStudent extends Student {
     int rating;
     long id;
 
-    public void showCollegeStudent() {
-        System.out.println("-----------CollegeStudent--------------");
-        System.out.println("collegename :" + getCollegeName());
-        System.out.println("rating :" + getRating());
-        System.out.println("id :" + getId());
-        System.out.println("Student");
-        System.out.println(this.getStudent());
-        //this.showStudent();
-        System.out.println("----------------------------------------");
+    @Override
+    public String toString() {
+        String strOut = "-----------CollegeStudent--------------";
+        if (getCollegeName() != null) strOut += "\ncollegename :" + getCollegeName();
+        strOut += "\nrating :" + getRating();
+        strOut += "\nid :" + getId();
+        strOut += "\n" + super.toString();
+        strOut += "\n----------------------------------------";
+        return strOut;
     }
 
 

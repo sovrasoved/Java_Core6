@@ -20,12 +20,6 @@ public class Solution {
         Course course5 = new Course(5, "Five object", "Teacher name Five Object");
 
 
-//        course1.showCourse();
-//        course2.showCourse();
-//        course3.showCourse();
-//        course4.showCourse();
-//        course5.showCourse();
-
         System.out.println(course1);
         System.out.println(course2);
         System.out.println(course3);
@@ -37,23 +31,23 @@ public class Solution {
 
         Student student1 = new Student("1Student_name01", "Student_name11", 6);
         System.out.println(student1);
-        //student1.showStudent();
+
         Student student2 = new Student("2Student21", courseArray);
         System.out.println(student2);
-        //student2.showStudent();
+
 
         CollegeStudent collegeStud1 = new CollegeStudent("col1", "col2", 3);
-        collegeStud1.showCollegeStudent();
+        System.out.println(collegeStud1);
         CollegeStudent collegeStud2 = new CollegeStudent("col11", courseArray);
-        collegeStud2.showCollegeStudent();
+        System.out.println(collegeStud2);
         CollegeStudent collegeStud3 = new CollegeStudent("col111", "col222", 333, "Col444", 555, 666);
-        collegeStud3.showCollegeStudent();
+        System.out.println(collegeStud3);
 
         SpecialStudent specialStudent1 = new SpecialStudent("1", "2", 3, "4", 5, 6);
         SpecialStudent specialStudent2 = new SpecialStudent("11", "22", 33);
         SpecialStudent specialStudent3 = new SpecialStudent( 999);
-        specialStudent1.showCollegeStudent();
-        specialStudent2.showCollegeStudent();
-        specialStudent3.showCollegeStudent();
+        System.out.println(specialStudent1);
+        System.out.println(specialStudent2);
+        System.out.println(specialStudent3);
     }
 }

@@ -11,34 +11,21 @@ public class Student {
     int age;
 
     @Override
-    public String toString()
-    {
-        String tmpStrOut="------------Student----------------\n";
-        tmpStrOut+="first name : " + getFirstName();
-        tmpStrOut+="\nlast name :" + getLastName();
-        tmpStrOut+="\ngroup :" + getGroup();
-        tmpStrOut+="\nage :" + getAge();
+    public String toString() {
+        String strOut = "------------Student----------------";
+        if (getFirstName() != null) strOut += "\nfirst name : " + getFirstName();
+        if (getLastName() != null) strOut += "\nlast name :" + getLastName();
+        strOut += "\ngroup :" + getGroup();
+        strOut += "\nage :" + getAge();
 
-        if ( getCoursesTaken() != null) {
+        if (getCoursesTaken() != null) {
             for (Course co : coursesTaken) {
-                tmpStrOut += "\n" + co.toString();
+                strOut += "\n" + co.toString();
             }
         }
-        tmpStrOut+="\n-----------------------------------\n";
-return tmpStrOut;
+        strOut += "\n-----------------------------------\n";
+        return strOut;
     }
-//    public void showStudent() {
-//        System.out.println("------------Student----------------");
-//        System.out.println("first name : " + getFirstName());
-//        System.out.println("last name :" + getLastName());
-//        System.out.println("group :" + getGroup());
-//        System.out.println("age :" + getAge());
-//
-//        for (Course co : coursesTaken) {
-//            co.showCourse();
-//        }
-//        System.out.println("-----------------------------------");
-//    }
 
     public Student(String firstName, String lastName, int group) {
         this.firstName = firstName;
@@ -46,7 +33,9 @@ return tmpStrOut;
         this.group = group;
     }
 
-    public Student getStudent(){return this;}
+    public Student getStudent() {
+        return this;
+    }
 
     public Student(String lastName, Course[] coursesTaken) {
         this.lastName = lastName;
