@@ -1,4 +1,4 @@
-package module3;
+package module3.task3;
 
 /**
  * Created by sovra on 08.02.2017.
@@ -15,7 +15,8 @@ public class CollegeStudent extends Student {
         System.out.println("rating :" + getRating());
         System.out.println("id :" + getId());
         System.out.println("Student");
-        this.showStudent();
+        System.out.println(this.getStudent());
+        //this.showStudent();
         System.out.println("----------------------------------------");
     }
 

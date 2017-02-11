@@ -1,4 +1,4 @@
-package module3;
+package module3.task3;
 
 /**
  * Created by sovra on 08.02.2017.
@@ -10,24 +10,43 @@ public class Student {
     Course[] coursesTaken;
     int age;
 
-    public void showStudent() {
-        System.out.println("------------Student----------------");
-        System.out.println("first name : " + getFirstName());
-        System.out.println("last name :" + getLastName());
-        System.out.println("group :" + getGroup());
-        System.out.println("age :" + getAge());
+    @Override
+    public String toString()
+    {
+        String tmpStrOut="------------Student----------------\n";
+        tmpStrOut+="first name : " + getFirstName();
+        tmpStrOut+="\nlast name :" + getLastName();
+        tmpStrOut+="\ngroup :" + getGroup();
+        tmpStrOut+="\nage :" + getAge();
 
-        for (Course co : coursesTaken) {
-            co.showCourse();
+        if ( getCoursesTaken() != null) {
+            for (Course co : coursesTaken) {
+                tmpStrOut += "\n" + co.toString();
+            }
         }
-        System.out.println("-----------------------------------");
+        tmpStrOut+="\n-----------------------------------\n";
+return tmpStrOut;
     }
+//    public void showStudent() {
+//        System.out.println("------------Student----------------");
+//        System.out.println("first name : " + getFirstName());
+//        System.out.println("last name :" + getLastName());
+//        System.out.println("group :" + getGroup());
+//        System.out.println("age :" + getAge());
+//
+//        for (Course co : coursesTaken) {
+//            co.showCourse();
+//        }
+//        System.out.println("-----------------------------------");
+//    }
 
     public Student(String firstName, String lastName, int group) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.group = group;
     }
+
+    public Student getStudent(){return this;}
 
     public Student(String lastName, Course[] coursesTaken) {
         this.lastName = lastName;

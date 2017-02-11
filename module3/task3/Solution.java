@@ -1,4 +1,4 @@
-package module3;
+package module3.task3;
 
 
 import java.util.Date;
@@ -19,18 +19,28 @@ public class Solution {
         Course course4 = new Course(4, "Four object", "Teacher name Four object");
         Course course5 = new Course(5, "Five object", "Teacher name Five Object");
 
-        course1.showCourse();
-        course2.showCourse();
-        course3.showCourse();
-        course4.showCourse();
-        course5.showCourse();
+
+//        course1.showCourse();
+//        course2.showCourse();
+//        course3.showCourse();
+//        course4.showCourse();
+//        course5.showCourse();
+
+        System.out.println(course1);
+        System.out.println(course2);
+        System.out.println(course3);
+        System.out.println(course4);
+        System.out.println(course5);
+
         Course[] courseArray = {course1, course2, course3, course4, course5};
 
 
         Student student1 = new Student("1Student_name01", "Student_name11", 6);
-        student1.showStudent();
+        System.out.println(student1);
+        //student1.showStudent();
         Student student2 = new Student("2Student21", courseArray);
-        student2.showStudent();
+        System.out.println(student2);
+        //student2.showStudent();
 
         CollegeStudent collegeStud1 = new CollegeStudent("col1", "col2", 3);
         collegeStud1.showCollegeStudent();
@@ -41,7 +51,7 @@ public class Solution {
 
         SpecialStudent specialStudent1 = new SpecialStudent("1", "2", 3, "4", 5, 6);
         SpecialStudent specialStudent2 = new SpecialStudent("11", "22", 33);
-        SpecialStudent specialStudent3 = new SpecialStudent("111", "222", 333, "444", 555, 666, 999);
+        SpecialStudent specialStudent3 = new SpecialStudent( 999);
         specialStudent1.showCollegeStudent();
         specialStudent2.showCollegeStudent();
         specialStudent3.showCollegeStudent();

@@ -1,4 +1,4 @@
-package module3;
+package module3.task4;
 
 /**
  * Created by sovra on 09.02.2017.
@@ -45,12 +45,19 @@ public class User {
 
     public void withdraw(int summ){
 //   снимает деньги с баланса с комиссией 5%, если сумма < 1000 и комиссией 10% в других случаях
+        int itmpBalance = getBalance();
+
         double Commission;
         if (summ < 1000)  Commission=0.05;
         else Commission=0.1;
         Commission++;
 
-        balance-=( (double)summ*Commission);
+        itmpBalance-=( (double)summ*Commission);
+
+        if (itmpBalance<0)
+            System.out.println("Error withdraw");
+        else
+            setBalance(itmpBalance);   //change balance
 
     }
 

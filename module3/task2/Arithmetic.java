@@ -1,4 +1,4 @@
-package module3;
+package module3.task2;
 
 /**
  * Created by sovra on 08.02.2017.
