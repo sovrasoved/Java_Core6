@@ -29,16 +29,16 @@ public class User {
         if (companyName != null && !companyName.isEmpty()) strtmp += "\nCompanyName : " + companyName;
         strtmp += "\nSalary : " + salary;
 
-        String strbank = "Bank: ";
-        if (bank.getBankCountry() != null && !bank.getBankCountry().isEmpty())
-            strbank += "\nBankCountry: " + bank.getBankCountry();
-        if (bank.getCurrency() != null) strbank += "\nCurrency :" + bank.getCurrency();
-        strbank += "\nNumberOfEmployees: " + bank.getNumberOfEmployees();
-        strbank += "AvrSalaryOfEmployee: " + bank.getAvrSalaryOfEmployee();
-        strbank += "\nRating: " + bank.getRating();
-        strbank += "\nTotalCapital: " + bank.getTotalCapital();
-
-        strtmp += strbank;
+//        String strbank = "Bank: ";
+//        if (bank.getBankCountry() != null && !bank.getBankCountry().isEmpty())
+//            strbank += "\nBankCountry: " + bank.getBankCountry();
+//        if (bank.getCurrency() != null) strbank += "\nCurrency :" + bank.getCurrency();
+//        strbank += "\nNumberOfEmployees: " + bank.getNumberOfEmployees();
+//        strbank += "AvrSalaryOfEmployee: " + bank.getAvrSalaryOfEmployee();
+//        strbank += "\nRating: " + bank.getRating();
+//        strbank += "\nTotalCapital: " + bank.getTotalCapital();
+//
+//        strtmp += strbank;
 
         return strtmp;
     }
