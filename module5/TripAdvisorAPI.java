@@ -19,6 +19,15 @@ public class TripAdvisorAPI implements API {
     }
 
     @Override
+    public Room[] addRooms(Room[] room_arr, Room xroom) {
+        int count_foundRooms = room_arr.length;
+        Room[] rooms = new Room[count_foundRooms + 1];
+        System.arraycopy(room_arr, 0, rooms, 0, count_foundRooms);
+        rooms[count_foundRooms] = xroom;
+        return rooms;
+    }
+
+    @Override
     public Room[] getallRecords() {
         return rooms;
     }
@@ -27,18 +36,10 @@ public class TripAdvisorAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         Room[] foundRoomsinArray = new Room[0];
         Date currentDate = new Date();
-        Room tmp = new Room(0, 0, 0, currentDate, "", "");
-        tmp.setPrice(price);
-        tmp.setPersons(persons);
-        tmp.setHotelName(hotel);
-        tmp.setCityName(city);
+        Room tmp = new Room(0, price, persons, currentDate, hotel, city);
         for (int iposition = 0; iposition < rooms.length; iposition++) {
             if (rooms[iposition].equals(tmp)) {
-                int count_foundRooms = foundRoomsinArray.length;
-
-                foundRoomsinArray = Arrays.copyOf(foundRoomsinArray, count_foundRooms + 1);
-                System.arraycopy(rooms, iposition, foundRoomsinArray, count_foundRooms, 1);
-
+                foundRoomsinArray = addRooms(foundRoomsinArray, rooms[iposition]);
             }
         }
         return foundRoomsinArray;

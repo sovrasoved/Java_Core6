@@ -12,17 +12,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         Controller contr = new Controller();
-
 
         output(contr.requstRooms(100, 1, "Kharkov", "Book"));
         output(contr.requstRooms(300, 1, "Kiev", "Peace"));
         output(contr.requstRooms(350, 3, "Kiev", "Peace"));
 
-//        System.out.println(contr.requstRooms(100,1,"Kharkov","Book"));
-//            System.out.println(contr.requstRooms(300,1,"Kiev","Peace"));
-//            System.out.println(contr.requstRooms(350,3,"Kiev","Peace"));
 
         API ap1 = new GoogleAPI();
         API ap2 = new BookingComAPI();

@@ -3,14 +3,11 @@ package module5;
 import java.util.Arrays;
 import java.util.Date;
 
-/**
- * Created by sovra on 06.03.2017.
- */
 public class Controller {
     final static int COUNT_APIS = 3;
     API apis[] = new API[COUNT_APIS];
 
-    {  //стат блок вместо конструктора
+    {  // блок вместо конструктора
         apis[0] = new BookingComAPI();
         apis[1] = new GoogleAPI();
         apis[2] = new TripAdvisorAPI();
@@ -19,24 +16,19 @@ public class Controller {
 
     public Room[] requstRooms(int price, int persons, String city, String hotel) {
         Room[] roomapi = new Room[0];
-        boolean isfound = false;
 
         for (API apitmp : apis) {
             Room[] roomstmp = apitmp.findRooms(price, persons, city, hotel);
             if (roomstmp.length > 0) {
-                isfound = true;
-                int count_foundRooms = roomapi.length;
-
-                roomapi= Arrays.copyOf(roomapi,count_foundRooms+1);
-                System.arraycopy(roomstmp, 0, roomapi,count_foundRooms, roomstmp.length);
+                roomapi = addRooms(roomapi, roomstmp);
+//                int count_foundRooms = roomapi.length;
+//                roomapi = Arrays.copyOf(roomapi, count_foundRooms + 1);
+//                System.arraycopy(roomstmp, 0, roomapi, count_foundRooms, roomstmp.length);
             }
         }
 
-        if (isfound == true) {
-
+        if (roomapi.length > 0)
             return roomapi;
-        }
-
         else {
             System.out.println("Not found...");
             return null;
@@ -61,18 +53,27 @@ public class Controller {
                 if (room1.equals(room2)) {
                     //save
                     int icountrec = foundRecord.length;
-                    foundRecord = Arrays.copyOf(foundRecord, icountrec+1);
+                    foundRecord = Arrays.copyOf(foundRecord, icountrec + 1);
                     foundRecord[icountrec] = room1;
 
                 }
             }
         }
 
-        if (foundRecord.length==0) {
+        if (foundRecord.length == 0) {
             System.out.println("Совпадающих не нашли");
             return null;
         }
         return foundRecord;
 
+    }
+
+    private Room[] addRooms(Room[] room_arr, Room[] xroom) {
+        int count1_arr = room_arr.length;
+        int count2_arr = xroom.length;
+        Room[] rooms = new Room[count1_arr+ count2_arr]; //new range
+        System.arraycopy(room_arr, 0, rooms, 0,count1_arr);
+        System.arraycopy(xroom,0,rooms,count1_arr,count2_arr);
+        return rooms;
     }
 }

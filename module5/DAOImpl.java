@@ -3,7 +3,7 @@ package module5;
 /**
  * Created by sovra on 09.03.2017.
  */
-public class DAObookingImpl implements DAO {
+public class DAOImpl implements DAO {
     Room[] roomBD = new Room[5]; // 5 - условие задачи
 
     private int getRoomsCount(Room[] roomDB) {
