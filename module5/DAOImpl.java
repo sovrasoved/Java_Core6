@@ -1,10 +1,14 @@
 package module5;
 
+import java.util.Date;
+
 /**
  * Created by sovra on 09.03.2017.
  */
 public class DAOImpl implements DAO {
-    Room[] roomBD = new Room[5]; // 5 - условие задачи
+    public final int SIZEDAO = 10;
+
+    Room[] roomBD = new Room[SIZEDAO]; //
 
     private int getRoomsCount(Room[] roomDB) {
         int count = 0;
@@ -19,7 +23,7 @@ public class DAOImpl implements DAO {
     @Override
     public Room save(Room room) {
         int count = getRoomsCount(roomBD);
-        if (count < 6) {  //по условию задачи
+        if (count < SIZEDAO) {  //по условию задачи
             roomBD[count] = room;
             return room;
         } else
@@ -65,5 +69,17 @@ public class DAOImpl implements DAO {
                 return rooms;
         }
         return null;
+    }
+
+    public void buildingDAOarray(){
+        Date currentDate = new Date();
+        for (int i=0; i<SIZEDAO; i++) {
+            int newprice = 100 + (50 * i);
+            if (save(new Room(i + 1, newprice, 1, currentDate, "Book", "Kharkov")) == null) {
+                System.out.println("Error ADD");
+                break;
+            }
+        }
+
     }
 }
