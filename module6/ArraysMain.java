@@ -35,5 +35,7 @@ public class ArraysMain {
         for (int y : c)
             System.out.print(y + " ");
 
+
+
     }
 }
