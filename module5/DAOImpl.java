@@ -22,6 +22,8 @@ public class DAOImpl implements DAO {
 
     @Override
     public Room save(Room room) {
+        System.out.println("Operation: save room");
+        System.out.println(room);
         int count = getRoomsCount(roomBD);
         if (count < SIZEDAO) {  //по условию задачи
             roomBD[count] = room;
@@ -32,6 +34,8 @@ public class DAOImpl implements DAO {
 
     @Override
     public boolean delete(Room room) {
+        System.out.println("Operation: delete room");
+        System.out.println(room);
         int iFound = -1;
         for (int i = 0; i < roomBD.length; i++) {
             Room roomIns = roomBD[i];
@@ -50,6 +54,8 @@ public class DAOImpl implements DAO {
 
     @Override
     public Room update(Room room) {
+        System.out.println("Operation: update room");
+        System.out.println(room);
         if (room == null) return null;
         for (int i = 0; i < roomBD.length; i++) {
             if (roomBD[i].getId() == room.getId()) {
@@ -63,11 +69,14 @@ public class DAOImpl implements DAO {
 
     @Override
     public Room findById(long id) {
+        System.out.println("Operation: findById room");
 
         for (Room rooms : roomBD) {
-            if ((rooms != null) && (rooms.getId() == id))
-                return rooms;
+            if ((rooms != null) && (rooms.getId() == id)){
+                System.out.println(rooms);
+                return rooms;}
         }
+        System.out.println("Not found");
         return null;
     }
 
