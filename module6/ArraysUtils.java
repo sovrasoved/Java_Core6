@@ -7,7 +7,11 @@ import java.util.Arrays;
 /**
  * Created by sovra on 21.03.2017.
  */
-final public class ArraysUtils {
+ public class ArraysUtils {
+
+     private ArraysUtils() {
+        //constructor default
+    }
 
     public static int sum(int array[]) {
         int isum = 0;
