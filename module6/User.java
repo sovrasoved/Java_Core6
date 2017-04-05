@@ -3,7 +3,7 @@ package module6;
 /**
  * Created by sovra on 21.03.2017.
  */
-public final class User {
+final public class User {
     long id;
     String firstName;
     String lastName;
