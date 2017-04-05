@@ -7,7 +7,9 @@ import java.util.Arrays;
  */
 public class UserUtils {
 
+
     User[] kill(User[] users, int ibegin) {
+        System.out.println("Kill users id = " + ibegin);
         User[] x = new User[users.length - 1]; //tmp array
         if (ibegin == users.length - 1)
             System.arraycopy(users, 0, x, 0, users.length - 1);
@@ -21,8 +23,8 @@ public class UserUtils {
         return x;
     }
 
-
     User[] uniqueUsers(User[] users) {
+        System.out.println("Unique Users ");
         if (users.length <= 1) return users;   //ничего не надо проверять
 
         for (int j = 0; j < users.length; j++)
@@ -37,6 +39,7 @@ public class UserUtils {
 
     //users are equal when all their field are equal
     User[] usersWithContitionalBalance(User[] users, int balance) {
+        System.out.println("usersWithContitionalBalance");
         for (int i = 0; i < users.length; i++)
             if (users[i].balance != balance) {
                 users = kill(users, i);
@@ -49,6 +52,7 @@ public class UserUtils {
 
     //user’s balance == balance
     final User[] paySalaryToUsers(User[] users) {
+        System.out.println("paySalaryToUser");
         for (User use : users)
             use.balance += use.salary;
 
@@ -56,6 +60,7 @@ public class UserUtils {
     }
 
     final long[] getUsersId(User[] users) {
+        System.out.println("getUsersId");
         long[] tmplong = new long[users.length];
         int i = 0;
         for (User use : users)
@@ -65,6 +70,7 @@ public class UserUtils {
     }
 
     User[] deleteEmptyUsers(User[] users) {
+        System.out.println("deleteEmptyUsers");
         for (int i = 0; i < users.length; i++)
             if (users[i] == null) {
                 users = kill(users, i);
@@ -76,6 +82,12 @@ public class UserUtils {
 
     }
 
+    void out(User[] users){
+        for ( User user1 : users ) {
+            System.out.println(user1);
+        }
+
+    }
 //    User[] deleteEmptyUsers(User[] users) {
 //  two variant
 //

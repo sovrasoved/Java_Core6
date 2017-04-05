@@ -7,9 +7,9 @@ import java.util.Arrays;
 /**
  * Created by sovra on 21.03.2017.
  */
- public class ArraysUtils {
+public class ArraysUtils {
 
-     private ArraysUtils() {
+    private ArraysUtils() {
         //constructor default
     }
 
@@ -90,11 +90,11 @@ import java.util.Arrays;
         return arrayx;
     }
 
-   static int[] addarray(int[] arrayx, int i) {
+    static int[] addarray(int[] arrayx, int i) {
         int oldlenght = arrayx.length;
         int[] arr = new int[arrayx.length + 1];
         System.arraycopy(arrayx, 0, arr, 0, oldlenght);
-        arr[oldlenght ] = i;
+        arr[oldlenght] = i;
         return arr;
     }
 }
