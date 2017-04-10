@@ -1,6 +1,5 @@
 package module6;
 
-import javax.jws.soap.SOAPBinding;
 
 public class UserMain {
     public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class UserMain {
         UserUtils user1 = new UserUtils();
         user1.out(users);
 
-        User[] users2 = user1.kill(users, 1);
+        User[] users2 = user1.u_remove(users, 1);
         user1.out(users2);
 
         User[] users3 = user1.uniqueUsers(users);

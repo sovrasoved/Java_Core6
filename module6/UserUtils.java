@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class UserUtils {
 
 
-    User[] kill(User[] users, int ibegin) {
+    User[] u_remove(User[] users, int ibegin) {
         System.out.println("Kill users id = " + ibegin);
         User[] x = new User[users.length - 1]; //tmp array
         if (ibegin == users.length - 1)
@@ -23,14 +23,18 @@ public class UserUtils {
         return x;
     }
 
+
     User[] uniqueUsers(User[] users) {
         System.out.println("Unique Users ");
         if (users.length <= 1) return users;   //ничего не надо проверять
 
+
+        //Я УДАЛЯЮ ИЗ СУЩЕСТВУЮЩЕГО МАССИВА
+        //А ЗАЧЕМ СОЗДАВАТЬ НОВЫЙ И ДОБАВЛЯТЬ ТУДА, А ПОТОМ УДАЛЯТЬ ПУСТЫЕ??????
         for (int j = 0; j < users.length; j++)
             for (int i = j + 1; i < users.length; i++) {
                 if (users[j].equals(users[i])) {
-                    users = kill(users, i);
+                    users = u_remove(users, i);
                     i--;
                 }
             }
@@ -41,8 +45,8 @@ public class UserUtils {
     User[] usersWithContitionalBalance(User[] users, int balance) {
         System.out.println("usersWithContitionalBalance");
         for (int i = 0; i < users.length; i++)
-            if (users[i].balance != balance) {
-                users = kill(users, i);
+            if (users[i].getBalance() != balance) {
+                users = u_remove(users, i);
                 i--;
             }
         if (users.length == 0) return null;
@@ -53,10 +57,18 @@ public class UserUtils {
     //user’s balance == balance
     final User[] paySalaryToUsers(User[] users) {
         System.out.println("paySalaryToUser");
-        for (User use : users)
-            use.balance += use.salary;
 
-        return users;
+        User[] newuser = new User[users.length];
+
+        for (int i = 0; i < users.length; i++) {
+            newuser[i] = new User(users[i].getId(),
+                    users[i].getFirstName(),
+                    users[i].getLastName(),
+                    users[i].getSalary(),
+                    users[i].getBalance()+users[i].getSalary());
+        }
+
+        return newuser;
     }
 
     final long[] getUsersId(User[] users) {
@@ -64,7 +76,7 @@ public class UserUtils {
         long[] tmplong = new long[users.length];
         int i = 0;
         for (User use : users)
-            tmplong[i++] = use.id;
+            tmplong[i++] = use.getId();
 
         return tmplong;
     }
@@ -73,7 +85,7 @@ public class UserUtils {
         System.out.println("deleteEmptyUsers");
         for (int i = 0; i < users.length; i++)
             if (users[i] == null) {
-                users = kill(users, i);
+                users = u_remove(users, i);
                 i--;
             }
         if (users.length == 0) return null;

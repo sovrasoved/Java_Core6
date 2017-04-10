@@ -4,11 +4,11 @@ package module6;
  * Created by sovra on 21.03.2017.
  */
 final public class User {
-    long id;
-    String firstName;
-    String lastName;
-    int salary;
-    int balance;
+   private long id;
+    private String firstName;
+    private String lastName;
+    private int salary;
+    private int balance;
 
     @Override
     public boolean equals(Object o) {
@@ -40,5 +40,25 @@ final public class User {
         this.lastName = lastName;
         this.salary = salary;
         this.balance = balance;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+         public long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getSalary() {
+        return salary;
     }
 }
