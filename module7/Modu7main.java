@@ -11,7 +11,7 @@ import static java.lang.Integer.compare;
  */
 public class Modu7main {
     final static int SIZE = 10;
-//    final static int SIZE_1_TEST = 2;
+    //    final static int SIZE_1_TEST = 2;
 //    final static int SIZE_2_TEST = 5;
     final static int SIZE_1_TEST = 1000;
     final static int SIZE_2_TEST = 10000;
@@ -225,7 +225,7 @@ public class Modu7main {
         duration = testList(0);
         System.arraycopy(duration, 0, durationAll, 0, 16);
         duration = testList("String");
-        System.arraycopy(duration,0,durationAll,16,16);
+        System.arraycopy(duration, 0, durationAll, 16, 16);
         return durationAll;
     }
 
@@ -276,10 +276,10 @@ public class Modu7main {
                             break;
                         default: //remove
                             if (j == 0) {
-                                for (int i = size1Test-1; i >=0; i--)
+                                for (int i = size1Test - 1; i >= 0; i--)
                                     arStrTest.remove(i);
                             } else {
-                                for (int i = size1Test-1; i >=0; i--)
+                                for (int i = size1Test - 1; i >= 0; i--)
                                     lslStrText.remove(i);
                             }
 
@@ -295,6 +295,7 @@ public class Modu7main {
 
         return durati;
     }
+
     private static Long[] testList(Integer t) {
         ArrayList<Integer> arStrTest = new ArrayList<>();
         LinkedList<Integer> lslStrText = new LinkedList<>();
@@ -342,10 +343,10 @@ public class Modu7main {
                             break;
                         default: //remove
                             if (j == 0) {
-                                for (int i = size1Test-1; i >=0; i--)
+                                for (int i = size1Test - 1; i >= 0; i--)
                                     arStrTest.remove(i);
                             } else {
-                                for (int i = size1Test-1; i >=0; i--)
+                                for (int i = size1Test - 1; i >= 0; i--)
                                     lslStrText.remove(i);
                             }
 
