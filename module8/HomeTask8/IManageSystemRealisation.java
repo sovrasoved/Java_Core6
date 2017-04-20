@@ -130,11 +130,11 @@ public class IManageSystemRealisation<T extends Food & Comparable<T>> implements
     @Override
     public List<Double> getPrices() {
         Collection<Double> colvalues = database.values();
-        List<Double> lst = new ArrayList<Double>(colvalues);
-
-        System.out.println(lst);
-
-
-        return null;
+//        List<Double> lst = new ArrayList<Double>(colvalues);
+return Collections.unmodifiableList(new ArrayList<Double>(colvalues));
+       // System.out.println(lst);
+//
+//
+//        return lst;
     }
 }
