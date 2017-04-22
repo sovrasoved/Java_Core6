@@ -1,8 +1,9 @@
 package module8.HomeTask8;
 
 
-import javax.swing.text.html.HTMLDocument;
+import javafx.util.Pair;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -15,44 +16,64 @@ public class IManageSystemRealisation<T extends Food & Comparable<T>> implements
     public void printProductsSortedByName() {
 
         //convert to list
-        List<Map.Entry<Food, Double>> lsttmp = new LinkedList<Map.Entry<Food, Double>>(database.entrySet());
-        //sort
-        Collections.sort(lsttmp, new Comparator<Map.Entry<Food, Double>>() {
+//        List<Map.Entry<Food, Double>> lsttmp = new LinkedList<Map.Entry<Food, Double>>(database.entrySet());
+//        //sort
+//        Collections.sort(lsttmp, new Comparator<Map.Entry<Food, Double>>() {
+//            @Override
+//            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
+//                 return o1.getKey().getName().compareTo(o2.getKey().getName());
+//            }
+//        });
+//ПОДСКАЖИТЕ КАК ПО ДРУГОМУ С ПОМОЩЬЮ ИТЕРАТОРОВ
+//     Iterator<Map.Entry<Food, Double>> it1 = lsttmp.iterator();
+//        Iterator<Map.Entry<Food, Double>> it2 = lsttmp.iterator();
+//       while (it1.hasNext()){
+//           System.out.println(it1.next().getKey().getName()+"  "+it2.next().getValue());
+//       }
+//
+//        for (Map.Entry<Food, Double>  itout: lsttmp ) {
+//            System.out.println(itout.getKey().getName() + " " + itout.getValue());
+//        }
+//
+//        System.out.println("out1 - ver1");
+        List<Pair<String, Double>> outstr = database.entrySet().stream()
+        .map(e->new Pair<String, Double>(e.getKey().getName(), e.getValue())).collect(Collectors.toList());
+
+        Collections.sort(outstr, new Comparator<Pair<String, Double>>() {
             @Override
-            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
-                 return o1.getKey().getName().compareTo(o2.getKey().getName());
+            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
+                return  o1.getKey().compareTo(o2.getKey());
             }
         });
-//ПОДСКАЖИТЕ КАК ПО ДРУГОМУ С ПОМОЩЬЮ ИТЕРАТОРОВ
-       Iterator<Map.Entry<Food, Double>> it1 = lsttmp.iterator();
-        Iterator<Map.Entry<Food, Double>> it2 = lsttmp.iterator();
-       while (it1.hasNext()){
-           System.out.println(it1.next().getKey().getName()+"  "+it2.next().getValue());
-       }
-
-        for (Map.Entry<Food, Double>  itout: lsttmp ) {
-            System.out.println(itout.getKey().getName() + " " + itout.getValue());
-        }
-
+        outstr.forEach(System.out::println);
     }
 
     @Override
     public void printProductsSortedByPrice() {
 
-        //convert to list
-        List<Map.Entry<Food, Double>> lsttmp = new LinkedList<Map.Entry<Food, Double>>(database.entrySet());
-        //sort
-        Collections.sort(lsttmp, new Comparator<Map.Entry<Food, Double>>() {
+//        //convert to list
+//        List<Map.Entry<Food, Double>> lsttmp = new LinkedList<Map.Entry<Food, Double>>(database.entrySet());
+//        //sort
+//        Collections.sort(lsttmp, new Comparator<Map.Entry<Food, Double>>() {
+//            @Override
+//            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
+//                return o1.getValue().compareTo(o2.getValue());
+//            }
+//        });
+//
+//        for (Map.Entry<Food, Double>  itout: lsttmp ) {
+//            System.out.println(itout.getKey().getName() + " " + itout.getValue());
+//        }
+
+        List<Pair<String, Double>> lstSortprice = database.entrySet().stream()
+        .map(e-> new Pair<String, Double>(e.getKey().getName(), e.getValue())).collect(Collectors.toList());
+        Collections.sort(lstSortprice, new Comparator<Pair<String, Double>>() {
             @Override
-            public int compare(Map.Entry<Food, Double> o1, Map.Entry<Food, Double> o2) {
+            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
                 return o1.getValue().compareTo(o2.getValue());
             }
         });
-
-        for (Map.Entry<Food, Double>  itout: lsttmp ) {
-            System.out.println(itout.getKey().getName() + " " + itout.getValue());
-        }
-
+        lstSortprice.forEach(System.out::println);
     }
 
     public void databaseout() {
