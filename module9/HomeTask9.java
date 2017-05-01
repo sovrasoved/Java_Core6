@@ -57,7 +57,7 @@ public class HomeTask9 {
     }
 
     private static List<Order> task9removeUSD(List<Order> lstmd1) {
-        System.out.println("удалите заказы в USD");
+        System.out.println("9. удалите заказы в USD");
         System.out.println("List before remove USD");
         lstmd1.forEach(System.out::println);
         List<Order> lstnew = new ArrayList<>(lstmd1);
@@ -88,7 +88,7 @@ public class HomeTask9 {
     }
 
     private static void task7SplitCity(List<Order> lstmd1) {
-        System.out.println("разделите список на столько списков, " +
+        System.out.println("7. разделите список на столько списков, " +
                 "сколько уникальных городов в User");
 
         System.out.println(lstmd1.stream().collect(Collectors.groupingBy((Order p) ->
@@ -96,6 +96,9 @@ public class HomeTask9 {
 
         System.out.println(lstmd1.stream().collect(Collectors.groupingBy((Order p) ->
                 p.getUser_o().getCity(), Collectors.counting())));
+
+
+//        System.out.println(lstmd1.stream().collect(Collectors.partitioningBy((Order p) -> p.getUser_o().getCity().equals("Kharkov"), Collectors.mapping(p -> p.getUser_o().getCity(), Collectors.toList()))));
 
 
 //        Map<Integer, List<Order>> groupCity =
