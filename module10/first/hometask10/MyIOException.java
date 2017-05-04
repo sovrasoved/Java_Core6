@@ -9,6 +9,13 @@ public class MyIOException extends Exception {
   private String txt;
 
     public MyIOException(String txt) {
+        System.out.println("My first exception : " + txt);
+        this.txt = txt;
+    }
+
+    public MyIOException(String message, String txt) {
+        super(message);
+        System.out.println("My second exception " + txt);
         this.txt = txt;
     }
 
