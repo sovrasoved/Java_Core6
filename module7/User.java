@@ -37,7 +37,12 @@ public class User {
 
     @Override
     public int hashCode() {
-        return 0;
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + balance;
+        return result;
     }
 
     public String getLastName() {

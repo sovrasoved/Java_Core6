@@ -10,13 +10,13 @@ import static java.lang.Integer.compare;
  * Created by sovra on 09.04.2017.
  */
 public class Modu7main {
-    final static int SIZE = 10;
+    final static int SIZE = 11;
     //    final static int SIZE_1_TEST = 2;
 //    final static int SIZE_2_TEST = 5;
     final static int SIZE_1_TEST = 1000;
     final static int SIZE_2_TEST = 10000;
 
-    static User[] createU() {
+     public static User[] createU() {
         User[] users = new User[SIZE];
         users[0] = new User(0, "Petro", "Sidorov", "Poltava", 2000);
         users[1] = new User(1, "Irina", "Sidorova", "Kiev", 4000);
@@ -28,25 +28,27 @@ public class Modu7main {
         users[7] = new User(7, "Vladimir", "Petrov", "Balaklea", 5000);
         users[8] = new User(7, "Vlada", "Pavlova", "Lvjiv", 5000);
         users[9] = new User(9, "Kostij", "Konstatinov", "Tepnopol", 10000);
+         users[10] = new User(9, "Kostij", "Konstatinov", "Tepnopol", 10000);
         return users;
     }
 
-    static Order[] createO(User[] user_o) {
+    public static Order[] createO(User[] user_o) {
         Order[] orders = new Order[SIZE];
         orders[0] = new Order(0, 400, Currency.UAN, "brandy", "shop1", user_o[0]);
-        orders[1] = new Order(1, 200, Currency.UAN, "cheese", "shop1", user_o[1]);
+        orders[1] = new Order(1, 200, Currency.UAN, "cheese", "shop2", user_o[1]);
         orders[2] = new Order(2, 150, Currency.UAN, "strawberry", "shop1", user_o[2]);
-        orders[3] = new Order(3, 30, Currency.UAN, "banana", "shop1", user_o[3]);
-        orders[4] = new Order(4, 6, Currency.UAN, "carrot", "shop1", user_o[4]);
+        orders[3] = new Order(3, 30, Currency.UAN, "banana", "shop2", user_o[3]);
+        orders[4] = new Order(4, 6, Currency.UAN, "carrot", "shop3", user_o[4]);
         orders[5] = new Order(5, 30, Currency.UAN, "orange", "shop1", user_o[5]);
-        orders[6] = new Order(6, 30, Currency.UAN, "mandarine", "shop1", user_o[6]);
-        orders[7] = new Order(7, 150, Currency.UAN, "meat", "shop1", user_o[7]);
-        orders[8] = new Order(8, 100, Currency.UAN, "fish", "shop1", user_o[8]);
+        orders[6] = new Order(6, 30, Currency.UAN, "mandarine", "shop2", user_o[6]);
+        orders[7] = new Order(7, 150, Currency.UAN, "meat", "shop3", user_o[7]);
+        orders[8] = new Order(8, 100, Currency.USD, "fish", "shop4", user_o[8]);
         orders[9] = new Order(9, 50, Currency.UAN, "garlic", "shop1", user_o[9]);
+        orders[10] = new Order(9, 50, Currency.UAN, "garlic", "shop2", user_o[10]);
         return orders;
     }
 
-    static List<Order> createUO(Order[] orders) {
+    public static List<Order> createUO(Order[] orders) {
         List<Order> lstmod7 = Arrays.asList(orders);
         return lstmod7;
     }

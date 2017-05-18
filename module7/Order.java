@@ -48,7 +48,13 @@ public class Order {
 
     @Override
     public int hashCode() {
-        return 0;
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + price;
+        result = 31 * result + (currency != null ? currency.hashCode() : 0);
+        result = 31 * result + (itemName != null ? itemName.hashCode() : 0);
+        result = 31 * result + (shopIdentificator != null ? shopIdentificator.hashCode() : 0);
+        result = 31 * result + (user_o != null ? user_o.hashCode() : 0);
+        return result;
     }
 
     public String getItemName() {
