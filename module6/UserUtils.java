@@ -95,6 +95,8 @@ public class UserUtils {
     }
 
     void out(User[] users){
+
+        if (users == null) return;
         for ( User user1 : users ) {
             System.out.println(user1);
         }

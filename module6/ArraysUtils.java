@@ -1,12 +1,5 @@
 package module6;
 
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-/**
- * Created by sovra on 21.03.2017.
- */
 public class ArraysUtils {
 
     private ArraysUtils() {

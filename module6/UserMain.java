@@ -7,7 +7,7 @@ public class UserMain {
         users[0] = new User(1, "frDmitry", "lsSergievich", 1000, 25);
         users[1] = new User(2, "frIgor", "lsIvanovich", 1500, 100);
         users[2] = new User(3, "frOlga", "lsAntonovna", 2000, 1000);
-        users[3] = new User(3, "frOlga", "lsAntonovna", 2000, 1000);
+        users[3] = new User(4, "frOlga", "lsAntonovna", 2000, 1000);
 
         UserUtils user1 = new UserUtils();
         user1.out(users);

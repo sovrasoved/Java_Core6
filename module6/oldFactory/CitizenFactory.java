@@ -1,9 +1,11 @@
-package module6;
+package module6.oldFactory;
+
+import module6.Citizen;
 
 /**
  * Created by sovra on 17.04.2017.
  */
-public class CitizenFactory1 {
+public class CitizenFactory {
     private static class Englishman implements Citizen {
         public Englishman() {
         }

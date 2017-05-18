@@ -61,4 +61,15 @@ final public class User {
     public int getSalary() {
         return salary;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                ", balance=" + balance +
+                '}';
+    }
 }

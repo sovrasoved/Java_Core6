@@ -5,11 +5,6 @@ package module6;
  */
 public class ArraysMain {
 
-//    static class xx extends ArraysUtils{   //error
-//
-//    }
-
-
     public static void main(String[] args) {
 
         int a[] = {1, 2, 3, 4, 5,7,-9,-11,-6,10,-58};
